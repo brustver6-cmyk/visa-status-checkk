@@ -52,7 +52,10 @@ const checkLimiter = rateLimit({
   handler: (req, res) => res.status(429).json({ message: 'rate_limited' })
 });
 
-const dbPath = path.join(__dirname, 'data.sqlite');
+const DATA_DIR = process.env.DATA_DIR || '/data';
+fs.mkdirSync(DATA_DIR, { recursive: true });
+
+const dbPath = path.join(DATA_DIR, 'data.sqlite');
 const db = new Database(dbPath);
 db.pragma('journal_mode = WAL');
 
