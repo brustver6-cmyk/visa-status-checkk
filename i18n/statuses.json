@@ -1,0 +1,26 @@
+{
+  "In Processing": {
+    "en": "In Processing",
+    "ru": "В обработке"
+  },
+  "Approved": {
+    "en": "Approved",
+    "ru": "Одобрено"
+  },
+  "Granted": {
+    "en": "Granted",
+    "ru": "Выдано"
+  },
+  "Refused": {
+    "en": "Refused",
+    "ru": "Отказано"
+  },
+  "Cancelled": {
+    "en": "Cancelled",
+    "ru": "Отменено"
+  },
+  "Additional Documents Required": {
+    "en": "Additional Documents Required",
+    "ru": "Нужны дополнительные документы"
+  }
+}

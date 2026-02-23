@@ -1,0 +1,20 @@
+<header class="header container">
+  <a class="brand" href="/?lang=<%= lang %>">
+    <span class="badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4z" stroke="white" stroke-width="1.6" opacity="0.95"/>
+        <path d="M8 12l2.2 2.2L16.5 8" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span data-i18n="brand"><%= t.brand %></span>
+  </a>
+
+  <nav class="nav">
+    <a class="primary" href="/check?lang=<%= lang %>" data-i18n="nav_check"><%= t.nav_check %></a>
+    <a href="/admin" rel="nofollow" data-i18n="nav_admin"><%= t.nav_admin %></a>
+    <div class="lang" aria-label="Language switch">
+      <button type="button" data-lang="en"><span data-i18n="lang_en"><%= t.lang_en %></span></button>
+      <button type="button" data-lang="ru"><span data-i18n="lang_ru"><%= t.lang_ru %></span></button>
+    </div>
+  </nav>
+</header>

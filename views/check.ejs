@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title><%= t.page_check_title %> — <%= t.brand %></title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <%- include('layout_header', {t, lang}) %>
+
+  <main class="container">
+    <section class="card">
+      <h1 style="margin:0 0 6px;font-size:22px" data-i18n="page_check_title"><%= t.page_check_title %></h1>
+      <p class="notice" style="margin:0" data-i18n="page_check_sub"><%= t.page_check_sub %></p>
+
+      <form id="checkForm" class="form-grid" style="margin-top:14px">
+        <label for="code" data-i18n="input_label"><%= t.input_label %></label>
+        <div class="row">
+          <input id="code" name="code" autocomplete="off"
+                 value="<%= prefill %>"
+                 data-i18n-placeholder="input_placeholder"
+                 placeholder="<%= t.input_placeholder %>"/>
+          <button id="btnCheck" class="btn danger" type="submit" data-i18n="btn_check"><%= t.btn_check %></button>
+        </div>
+        <div id="hint" class="notice"></div>
+      </form>
+    </section>
+
+    <div class="footer">
+      Tip: Save your code safely. We only use it to show your status.
+    </div>
+  </main>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="panel">
+      <div class="top">
+        <h3 data-i18n="result_title"><%= t.result_title %></h3>
+        <button class="icon-btn" id="closeModal" aria-label="Close">✕</button>
+      </div>
+
+      <div class="table">
+        <div class="r">
+          <div class="k" data-i18n="result_code"><%= t.result_code %></div>
+          <div class="v" id="vCode">—</div>
+        </div>
+        <div class="r">
+          <div class="k" data-i18n="result_status"><%= t.result_status %></div>
+          <div class="v" id="vStatus">—</div>
+        </div>
+        <div class="r">
+          <div class="k" data-i18n="result_updated"><%= t.result_updated %></div>
+          <div class="v" id="vUpdated">—</div>
+        </div>
+        <div class="r">
+          <div class="k" data-i18n="result_message"><%= t.result_message %></div>
+          <div class="v" id="vMessage" style="font-weight:600;line-height:1.45">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+  <script src="/check.js"></script>
+</body>
+</html>

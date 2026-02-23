@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title><%= t.brand %></title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <%- include('layout_header', {t, lang}) %>
+
+  <main class="container">
+    <section class="hero">
+      <div class="grid">
+        <div>
+          <h1 data-i18n="hero_title"><%= t.hero_title %></h1>
+          <p data-i18n="hero_sub"><%= t.hero_sub %></p>
+
+          <div class="actions">
+            <a class="btn primary" href="/check?lang=<%= lang %>" data-i18n="cta_primary"><%= t.cta_primary %></a>
+            <a class="btn" href="#how" data-i18n="cta_secondary"><%= t.cta_secondary %></a>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="kpis">
+            <div class="kpi">
+              <strong data-i18n="secure_title"><%= t.secure_title %></strong>
+              <span data-i18n="secure_text"><%= t.secure_text %></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <svg class="plane" width="240" height="140" viewBox="0 0 240 140" fill="none">
+            <path d="M20 80c40-18 66-28 92-34 14-3 28-4 42 1l52 18-18 8-30-7-10 8 22 10-12 6-26-8-12 10 16 12-10 5-24-12-18 14c-4 3-10 2-12-3l-12-36-40 8-8-10 38-10-10-16z" fill="white" opacity=".55"/>
+          </svg>
+
+          <svg class="docs" width="280" height="220" viewBox="0 0 280 220" fill="none">
+            <rect x="88" y="40" width="160" height="190" rx="18" fill="white" opacity=".12"/>
+            <rect x="72" y="24" width="160" height="190" rx="18" fill="white" opacity=".10"/>
+            <rect x="58" y="12" width="160" height="190" rx="18" fill="white" opacity=".08"/>
+            <rect x="96" y="76" width="120" height="10" rx="5" fill="white" opacity=".20"/>
+            <rect x="96" y="98" width="98" height="10" rx="5" fill="white" opacity=".18"/>
+            <rect x="96" y="120" width="110" height="10" rx="5" fill="white" opacity=".16"/>
+          </svg>
+
+          <div class="frame">
+            <form class="mini-form" action="/check" method="GET">
+              <input type="hidden" name="lang" value="<%= lang %>"/>
+              <input name="prefill" data-i18n-placeholder="input_placeholder" placeholder="<%= t.input_placeholder %>"/>
+              <button class="btn danger" type="submit" data-i18n="btn_check"><%= t.btn_check %></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <h2 data-i18n="how_title"><%= t.how_title %></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <strong data-i18n="how_1_title"><%= t.how_1_title %></strong>
+          <p data-i18n="how_1_text"><%= t.how_1_text %></p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <strong data-i18n="how_2_title"><%= t.how_2_title %></strong>
+          <p data-i18n="how_2_text"><%= t.how_2_text %></p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <strong data-i18n="how_3_title"><%= t.how_3_title %></strong>
+          <p data-i18n="how_3_text"><%= t.how_3_text %></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> Visa Center. Demo system.
+    </div>
+  </main>
+
+  <script src="/app.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    window.__initI18n();
+  </script>
+</body>
+</html>
